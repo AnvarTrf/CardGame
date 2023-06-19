@@ -38,18 +38,10 @@ public class GameEndUIController : MonoBehaviour
 
     private void QuitGame()
     {
-        if(Application.isEditor)
-        {
-            EditorApplication.ExitPlaymode();
-        }
-        else
-        {
-            Application.Quit();
-        }
+        
     }
 
     public void Initialize(Player winner){
-        // winnerName.text = $"Player: {winner.ID+1} has won!";
         winnerName.text = $"{winner.playerName} has won!";
     }
 }

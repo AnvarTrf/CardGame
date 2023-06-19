@@ -30,7 +30,6 @@ public class GameplayUIController : MonoBehaviour
 
         currentPlayerTurn.gameObject.SetActive(true);
         currentPlayerTurn.text=$"{PlayerManager.instance.players[ID].playerName}`s Turn!";
-        // make it blink
         StartCoroutine(BlinkCurrentPlayerTurn());
     }
 

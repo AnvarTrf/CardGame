@@ -17,9 +17,8 @@ public class CardController : MonoBehaviour , IPointerEnterHandler , IPointerExi
     public GameObject player1Area;
    
     private void Awake() {
-        // image is the background of playerHands
         image = GetComponent<Image>();
-        // Initialize(card);
+
     }
 
     private void Start() {
@@ -120,19 +119,13 @@ public class CardController : MonoBehaviour , IPointerEnterHandler , IPointerExi
 
     private void PlayCard(Transform playArea)
     {
-        /*if (playArea.childCount == 0)
-        {*/
+        
             transform.SetParent(playArea);
             transform.localPosition = Vector3.zero;
             originalParent = playArea;
             CardManager.instance.PlayCard(this, card.ownerID);
            
-      /*  }
-        else
-        {
-            transform.DOShakeScale(0.25f, 0.25f, 3);
-            ReturnToHand();
-        }   */
+      
     }
 
 
@@ -145,7 +138,6 @@ public class CardController : MonoBehaviour , IPointerEnterHandler , IPointerExi
             transform.SetParent(originalParent);
         };
        transform.SetParent(originalParent);
-    //    transform.localPosition = Vector3.zero;
     }
 
     public void OnDrag(PointerEventData eventData)

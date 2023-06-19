@@ -22,7 +22,6 @@ public class PlayerManager : MonoBehaviour
     public void DamagePlayer(int ID, int damage)
     {
         Player player = FindPlayerByID(ID);
-        // Debug.Log("damage: "+ health);
         player.health -= damage;
         UIManager.instance.UpdateHealthValues(players[0].health,players[1].health);
 
@@ -31,11 +30,6 @@ public class PlayerManager : MonoBehaviour
         {
             PlayerLost(ID);
         }
-        // GameObject playerUI = GameObject.FindGameObjectWithTag("playArea");                
-        // Destroy(playerUI. transform. GetChild(0). gameObject); 
-
-        // GameObject playerUI2 = GameObject.FindGameObjectWithTag("playArea2");                
-        // Destroy(playerUI2. transform. GetChild(0). gameObject);
     }
 
     private void PlayerLost(int ID)
@@ -43,7 +37,6 @@ public class PlayerManager : MonoBehaviour
         UIManager.instance.GameFinished(ID==0?FindPlayerByID(1):FindPlayerByID(0));
     }
 
-    // // public Player[] playersArray;
     private void Awake() {
         instance = this;  
     }
@@ -54,22 +47,8 @@ public class PlayerManager : MonoBehaviour
 
     public Player FindPlayerByID(int ID){
         Player foundPlayer = null;
-       /* foreach(Player player in players){
-            if(player.ID == currentPlayerTurn)
-            {
-                player.myTurn = true;
-            }  
-            else
-            {
-                player.myTurn = false;
-            }
-            if (player.ID == ID)
-            foundPlayer = player;
-        }
-          */
         foundPlayer= players[ID];
-        // Player player = players.Find(x => x.ID == currentPlayerTurn);
-        // player.myTurn=true;
+        
         return foundPlayer;
     }
 

@@ -11,7 +11,6 @@ public class TurnManager : MonoBehaviour
 
    }
    private void Start() {
-      // StartTurnGameplay(0);
    }
    public void StartTurnGameplay(int PlayerID)
    {

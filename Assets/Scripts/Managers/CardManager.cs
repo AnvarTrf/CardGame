@@ -21,18 +21,13 @@ public class CardManager : MonoBehaviour
     private void Start()
     {
         
-        // GenerateCards();
+        
     }
 
     
     public void GenerateCards()
     {
        
-            // foreach(int cardIndex in player1Deck){
-            // CardController newCard = Instantiate(cardControllerPrefab, player1Hand.root);
-            // newCard.transform.localPosition = Vector3.zero;
-            // newCard.Initialize(cards[cardIndex], 0);
-            // }
         
         foreach (Card card in cards)
         {
